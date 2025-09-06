@@ -39,4 +39,10 @@ app.get('/', (req, res) => res.send('Hello World!'))
  
 
 
-app.listen(port, () => console.log(`Node JS Server Started in Port ${port}`))
+// For local development
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(port, () => console.log(`Node JS Server Started in Port ${port}`));
+}
+
+// Export for Vercel
+export default app;
