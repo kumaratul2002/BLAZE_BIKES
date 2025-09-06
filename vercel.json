@@ -23,9 +23,6 @@
       "dest": "/client/build/index.html"
     }
   ],
-  "env": {
-    "NODE_ENV": "production"
-  },
   "functions": {
     "server.js": {
       "maxDuration": 30
