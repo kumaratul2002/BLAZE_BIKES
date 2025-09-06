@@ -1,6 +1,7 @@
-const express = require("express");
+import express from "express";
+import Cycle from "../models/cycleModel.js";
+
 const router = express.Router();
-const Cycle = require("../models/cycleModel");
 
 router.get("/getallcycles", async (req, res) => {
   try {
@@ -53,4 +54,4 @@ router.post("/deletecycle", async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;

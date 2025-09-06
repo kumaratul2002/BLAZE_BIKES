@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const cycleSchema = new mongoose.Schema({
 
@@ -18,5 +18,5 @@ const cycleSchema = new mongoose.Schema({
 }, {timestamps : true}
 
 )
-const cycleModel = mongoose.model('cycles' , cycleSchema)
-module.exports = cycleModel
+const cycleModel = mongoose.model('cycles' , cycleSchema);
+export default cycleModel;

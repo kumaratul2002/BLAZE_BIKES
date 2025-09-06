@@ -1,11 +1,11 @@
-const express = require("express");
+import express from "express";
+import Booking from "../models/bookingModel.js";
+import Cycle from "../models/cycleModel.js";
+import { v4 as uuidv4 } from "uuid";
+import Stripe from "stripe";
+
 const router = express.Router();
-const Booking = require("../models/bookingModel");
-const Cycle = require("../models/cycleModel");
-const { v4: uuidv4 } = require("uuid");
-const stripe = require("stripe")(
-  "sk_test_51IYnC0SIR2AbPxU0EiMx1fTwzbZXLbkaOcbc2cXx49528d9TGkQVjUINJfUDAnQMVaBFfBDP5xtcHCkZG1n1V3E800U7qXFmGf"
-);
+const stripe = Stripe("sk_test_51IYnC0SIR2AbPxU0EiMx1fTwzbZXLbkaOcbc2cXx49528d9TGkQVjUINJfUDAnQMVaBFfBDP5xtcHCkZG1n1V3E800U7qXFmGf");
 router.post("/bookcycle", async (req, res) => {
   const { token } = req.body;
   try {
@@ -61,4 +61,4 @@ router.get("/getallbookings", async(req, res) => {
 });
 // 4242 4242 4242 4242
 
-module.exports = router;
+export default router;

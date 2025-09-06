@@ -1,8 +1,10 @@
-const mongoose = require("mongoose");
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
 
+dotenv.config();
 function connectDB(){
 
-    mongoose.connect('mongodb+srv://doodleforstudy:EaUh54TtCoPTpf45@cluster0.wuqzl.mongodb.net/' , {useUnifiedTopology: true , useNewUrlParser: true})
+    mongoose.connect(process.env.MONGODB_URI)
 
     const connection = mongoose.connection
 
@@ -19,6 +21,4 @@ function connectDB(){
 
 connectDB()
 
-module.exports = mongoose
-//doodleforstudy
-//DT0aos7QniLporYx
+export default mongoose;
